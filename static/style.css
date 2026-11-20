@@ -23,3 +23,7 @@
 .hero-art{border-radius:20% 20% 20% 20%}.pill{display:none}
 
 .visual-cards{inset:1% 15% 1%}
+
+@media(max-width:800px){.hero-art{display:none}}
+.project-video{display:block;width:100%;height:160px;object-fit:contain;border-radius:10px;background:#eaf8fa}
+.hero-copy h1 span{color:#173b59}
