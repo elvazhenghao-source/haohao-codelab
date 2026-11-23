@@ -39,4 +39,21 @@
       }
     });
   });
+
+  document.querySelectorAll('.trial-card-link').forEach(function (card) {
+    function openForm() {
+      window.open(card.getAttribute('data-form-url'), '_blank', 'noopener');
+    }
+
+    card.addEventListener('click', function (event) {
+      if (event.target.closest('a')) return;
+      openForm();
+    });
+    card.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openForm();
+      }
+    });
+  });
 }());
