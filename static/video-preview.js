@@ -32,7 +32,13 @@
     video.addEventListener('ended', resetPreview);
 
     fullscreenButton.addEventListener('click', function () {
-      if (preview.requestFullscreen) {
+      if (document.fullscreenElement === preview || document.webkitFullscreenElement === preview) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      } else if (preview.requestFullscreen) {
         preview.requestFullscreen();
       } else if (video.webkitEnterFullscreen) {
         video.webkitEnterFullscreen();
